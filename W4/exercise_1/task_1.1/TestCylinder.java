@@ -24,5 +24,13 @@ public class TestCylinder { // save as "TestCylinder.java"
         + " height=" + c3.getHeight()
         + " base area=" + c3.getArea()
         + " volume=" + c3.getVolume());
+
+        Cylinder c4 = new Cylinder(3.0, 10.0, "green");
+        System.out.println("Cylinder:"
+        + " radius=" + c4.getRadius()
+        + " height=" + c4.getHeight()
+        + " base area=" + c4.getArea()
+        + " volume=" + c4.getVolume()
+        + " color=" + c4.getColor());
     }
 }

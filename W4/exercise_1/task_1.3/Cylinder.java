@@ -25,9 +25,26 @@ public class Cylinder extends Circle { // Save as "Cylinder.java"
     public double getHeight() {
         return height;
     }
-    // A public method for computing the volume of cylinder
-    // use superclass method getArea() to get the base area
+
+    @Override
+    public double getArea() {
+        return 2 * Math.PI * getRadius() * (height + getRadius());
+    }
+
     public double getVolume() {
-        return getArea()*height;
+        return super.getArea() * height; // Use Circle's getArea() for base area
+    }
+    /**
+     * TASK 1.3: Override toString() method
+     * 
+     * @Override annotation asks compiler to check whether there is such a method 
+     * in the superclass to be overridden. This helps if you misspell toString().
+     * 
+     * Use super.toString() to reuse Circle's toString() method
+     */
+    @Override
+    public String toString() { // in Cylinder class
+        return "Cylinder: subclass of " + super.toString() // use Circle's toString()
+                + " height=" + height;
     }
 }

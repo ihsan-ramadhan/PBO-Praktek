@@ -27,7 +27,25 @@ public class Cylinder extends Circle { // Save as "Cylinder.java"
     }
     // A public method for computing the volume of cylinder
     // use superclass method getArea() to get the base area
+  /**
+     * TASK 1.2: Override getArea() to compute surface area of cylinder
+     * Surface area = 2πrh + 2πr² = 2πr(h + r)
+     * 
+     * If getArea() is called by a Circle instance, it returns the area.
+     * If getArea() is called by a Cylinder instance, it returns the surface area.
+     */
+    @Override
+    public double getArea() {
+        return 2 * Math.PI * getRadius() * (height + getRadius());
+    }
+    /**
+     * TASK 1.2: Fix getVolume() method
+     * After overriding getArea() in subclass Cylinder, getVolume() no longer works
+     * because it uses the overridden getArea() method.
+     * 
+     * Solution: Use super.getArea() to invoke the getArea() of superclass Circle
+     */
     public double getVolume() {
-        return getArea()*height;
+        return super.getArea() * height; // Use Circle's getArea() for base area
     }
 }
