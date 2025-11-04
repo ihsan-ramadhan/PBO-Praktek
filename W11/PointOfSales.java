@@ -174,7 +174,7 @@ public class PointOfSales extends JFrame {
             }
         }
 
-        keranjangModel.addRow(new Object[]{selectedId, selectedNama, qty, selectedHarga, subtotal}); // 
+        keranjangModel.addRow(new Object[]{selectedId, selectedNama, qty, selectedHarga, subtotal});
         updateTotal();
         qtySpinner.setValue(1);
     }
@@ -214,10 +214,10 @@ public class PointOfSales extends JFrame {
         int points = (int) (currentTotal / 1000);
 
         sb.append("---------------------------------------\n");
-        sb.append(String.format("TOTAL:\n%s\n", currencyFormatter.format(currentTotal))); // [cite: 192, 193]
-        sb.append(String.format("POINTS DIDAPAT: %d (1 point per Rp 1000)\n", points)); // [cite: 194]
+        sb.append(String.format("TOTAL:\n%s\n", currencyFormatter.format(currentTotal)));
+        sb.append(String.format("POINTS DIDAPAT: %d (1 point per Rp 1000)\n", points));
         sb.append("\n");
-        sb.append("   Terima kasih! Silakan kunjungi kembali.\n"); // [cite: 195]
+        sb.append("   Terima kasih! Silakan kunjungi kembali.\n");
 
         strukArea.setText(sb.toString());
 
@@ -243,7 +243,6 @@ public class PointOfSales extends JFrame {
 
 
     public static void main(String[] args) {
-        // Menjalankan GUI di Event Dispatch Thread
         SwingUtilities.invokeLater(() -> {
             PointOfSales frame = new PointOfSales();
             frame.setVisible(true);
